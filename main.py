@@ -9,6 +9,8 @@ from build_Hamiltonian import *
 import random
 from math import sqrt
 from compute_eigenvecs import *
+from save_img import *
+from load_img import *
 
 # Set the hyperparameters
 hbar, mass, s, rho, sigma = set_hyperparams()
@@ -18,8 +20,15 @@ dir_path = 'downscaled_my_samples'
 data = read_images(path = dir_path)
 data = preprocess(data, k_size = 5, sigma = sigma, pad = 50)
 
-# Build the Hamiltonian list, containing Hamiltonians for each image
-Hamiltonians = build_Hamiltonian(data, hbar, mass)
+# Save the images as NumPy arrays
+save_images(data)
 
-# Compute the eigenvectors and eigenvalues of the Hamiltonaians
-eigenvals, eigenvecs = compute_eigenpairs(Hamiltonians, num_eigen = 3000)
+# Load the image arrays
+path = 'data_arrays'
+data = load_images(path)
+
+# # Build the Hamiltonian list, containing Hamiltonians for each image
+# Hamiltonians = build_Hamiltonian(data, hbar, mass)
+
+# # Compute the eigenvectors and eigenvalues of the Hamiltonaians
+# eigenvals, eigenvecs = compute_eigenpairs(Hamiltonians, num_eigen = 3000)

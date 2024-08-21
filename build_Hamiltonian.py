@@ -1,5 +1,4 @@
 import numpy as np
-import cv2 as cv
 import scipy.sparse as sp
 
 # Function to build Hamiltonian
