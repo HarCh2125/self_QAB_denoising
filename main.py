@@ -8,6 +8,7 @@ from pre_process import *
 from build_Hamiltonian import *
 import random
 from math import sqrt
+from compute_eigenvecs import *
 
 # Set the hyperparameters
 hbar, mass, s, rho, sigma = set_hyperparams()
@@ -19,3 +20,6 @@ data = preprocess(data, k_size = 5, sigma = sigma, pad = 50)
 
 # Build the Hamiltonian list, containing Hamiltonians for each image
 Hamiltonians = build_Hamiltonian(data, hbar, mass)
+
+# Compute the eigenvectors and eigenvalues of the Hamiltonaians
+eigenvals, eigenvecs = compute_eigenpairs(Hamiltonians, num_eigen = 3000)

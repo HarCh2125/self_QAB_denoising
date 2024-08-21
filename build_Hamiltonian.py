@@ -3,6 +3,35 @@ import cv2 as cv
 import scipy.sparse as sp
 
 # Function to build Hamiltonian
+# def build_Hamiltonian(data: list, hbar: float, mass: float) -> list:
+#     # Hamiltonians = []
+
+#     # # Define a constant for the ratio \frac{\hbar^2}{2m}
+#     # qdc = (hbar**2)/(2*mass)
+
+#     # for img in data:
+#     #     N = img.shape[0]
+#     #     dim = img.shape[0]
+#     #     H = np.zeros((dim**2, dim**2))
+
+#     #     for i in range(N**2):
+    #         for j in range(N**2):
+    #             if(i == j):
+    #                 H[i][j] = img[i] + 4*qdc
+    #             elif(i == j + 1 or i == j - 1):
+    #                 H[i][j] = 0 - qdc
+    #             elif(i == j + N or i == j - N):
+    #                 H[i][j] = 0 - qdc
+    #             else:
+    #                 H[i][j] = 0
+
+    #     Hamiltonians.append(H)
+
+    # for i in range(len(data)):
+    #     cv.imshow("Hamiltonian_{i}", Hamiltonians[i])
+
+    # return Hamiltonians
+
 def build_Hamiltonian(data: list, hbar: float, mass: float) -> list:
     Hamiltonians = []
 
